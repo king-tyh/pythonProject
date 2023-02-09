@@ -34,7 +34,7 @@ def main():
                                                 'alikafka-pre-cn-tl32ravm3007-2-vpc.alikafka.aliyuncs.com:9092',
                                                 'alikafka-pre-cn-tl32ravm3007-3-vpc.alikafka.aliyuncs.com:9092'])
     data = {'msg': '你好 kafka!'}
-    producer.send_message("log-data-check", "2log-data-check-", "{'msg':'add','code':1,'data':{'domainCode':'panelVoiceFusion','nlpModel':'ref328'}}")
+    producer.send_message("perception-decision", "perception-decision-371745272", {"extend":{"type":'3'},"query":"播放王心凌的爱你","sceneId":"A84","sn":"20230221175337102000365742","deviceId":"C86314209687","userId":"60750606","actualCreateTime":"2023-02-21 17:53:38"})
     time.sleep(2)
 
 
