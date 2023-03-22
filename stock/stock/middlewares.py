@@ -6,12 +6,19 @@
 from scrapy import signals
 # useful for handling different item types with a single interface
 from itemadapter import is_item, ItemAdapter
+import sys
+import os
+
+fpath = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+ffpath = os.path.abspath(os.path.join(fpath, ".."))
+sys.path.append(ffpath)
 from ip_pool.ip_pool.utils.mysql_util import Mysql_util
 import scrapy
 from scrapy import signals
 import random
 from scrapy.downloadermiddlewares.useragent import UserAgentMiddleware
 import time
+
 
 class StockSpiderMiddleware:
     # Not all methods need to be defined. If a method is not defined,
@@ -100,7 +107,6 @@ class StockDownloaderMiddleware:
         response = scrapy.http.HtmlResponse(url=request.url, body=text.encode('utf-8'), status=200)
         print("+++++++++++++++++++++++++++++++++++++++")
         return response
-
 
     def process_response(self, request, response, spider):
         # Called with the response returned from the downloader.

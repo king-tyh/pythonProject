@@ -1,4 +1,10 @@
 import scrapy
+import sys
+import os
+fpath = os.path.abspath(os.path.join(os.path.dirname(__file__),".."))
+ffpath = os.path.abspath(os.path.join(fpath,"../.."))
+print(ffpath)
+sys.path.append(ffpath)
 from ip_pool.ip_pool.utils.mysql_util import Mysql_util
 from ip_pool.ip_pool.utils.test_ip import check_proxy
 # from ip_pool.ip_pool.utils.mysql_util import Mysql_util
